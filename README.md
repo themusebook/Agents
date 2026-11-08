@@ -423,6 +423,18 @@ Import prefers monorepo paths when this package lives inside `solana-clawd`:
 | `normalizeDefiAgent` | Defi pack normalize |
 | `loadCheshireSchema` / `SCHEMA_PATH` | Schema access |
 
+## Omnichain Agents
+
+The fleet's own EIP-8004 registration documents live under [`agents/registrations/`](./agents/registrations/) — the same `registration-v1` shape the identity forge mints from (`buildRegistration` in `src/index.js`), kept as canonical source records. They are distinct from the prompt catalog above: the catalog holds Musebook-schema persona/specialist prompts, while these documents describe live (or paper-mode) agents, their endpoints, and their registry entries. Rails: Solana is the native rail for every agent below; Base appears via x402 EIP-3009 / OpenSea tooling; Robinhood Chain (4663 / 46630) is available to the fleet through this repo's ERC-8004 forge.
+
+| Agent | Role | Chains / rails | Document |
+|---|---|---|---|
+| SOLtoshi | Sovereign signal agent — "The Ghost in the Solana Machine" | Solana native · x402-gated actions (USDC / $CLAWD) | [soltoshi.json](./agents/registrations/soltoshi.json) |
+| Clawd | Sovereign Solana-native agent ($CLAWD): live relay, x402 payments, Metaplex identity, policy-gated execution | Solana native · Base via x402 EIP-3009 tooling · Robinhood Chain via ERC-8004 forge | [clawd.json](./agents/registrations/clawd.json) |
+| Clawd Grok — Imperial Perps Agent | Phoenix perps via Imperial behind a 44-tool Web MCP; Grok reasoning, paper-first, approval-gated live trading | Solana native | [clawd-grok.json](./agents/registrations/clawd-grok.json) |
+| PumpAI — Pump.fun MCP Server | Hosted MCP for pump.fun launches and token data | Solana native | [pumpai.json](./agents/registrations/pumpai.json) |
+| SOL Fund — Solana AI Hedge Fund | Multi-agent fund (spot DFlow/Jupiter, perps Phoenix, Grok reasoning); **paper / dry-run mode — no public endpoints** | Solana native · x402 agent budgets on SVM | [sol-fund.json](./agents/registrations/sol-fund.json) |
+
 ## Choose a chain (identity forge)
 
 | | Robinhood Chain | Solana |
@@ -551,6 +563,7 @@ curl -fsS https://cheshireterminal.ai/api/robinhood/agents/config \
 Cheshire-Terminal-Agents/          # repo root — Musebook Agents (npm package: cheshire-terminal-agents)
 ├── assets/cheshire-terminal-agents.svg
 ├── agents/                        # 53 Musebook catalog agents
+│   └── registrations/             # EIP-8004 registration documents (omnichain fleet)
 ├── locales/                       # i18n overlays
 ├── schema/Cheshire_agent_schema.json
 ├── contracts/                     # ERC-8004 registry suite

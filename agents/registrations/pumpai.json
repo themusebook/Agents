@@ -1,0 +1,37 @@
+{
+  "active": true,
+  "description": "Hosted MCP server for pump.fun on Solana: live token launches, trending tokens, and per-token market data, streamed into any MCP-compatible agent. Connect once and give your agent real-time eyes on the pump.fun launch tape — new mints, graduation progress, volume and liquidity — with no indexer to run and no scraping to maintain.",
+  "metadata": {
+    "chain": "solana",
+    "tags": [
+      "solana",
+      "pumpfun",
+      "mcp",
+      "memecoins",
+      "launches",
+      "market-data",
+      "ai-agent"
+    ]
+  },
+  "name": "PumpAI — Pump.fun MCP Server",
+  "services": [
+    {
+      "description": "PumpAI MCP server for pump.fun launches and token data.",
+      "endpoint": "https://pumpai.ai/mcp",
+      "name": "MCP"
+    },
+    {
+      "endpoint": "https://pumpai.ai",
+      "name": "web"
+    },
+    {
+      "description": "PumpAI tools directory.",
+      "endpoint": "https://pumpai.ai/tools",
+      "name": "web"
+    }
+  ],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1"
+}

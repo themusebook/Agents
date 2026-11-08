@@ -1,0 +1,48 @@
+{
+  "active": false,
+  "description": "A Solana-native multi-agent hedge fund: spot via DFlow and Jupiter, perpetuals via Phoenix, market data via Helius and Solana Tracker, Grok (xAI) reasoning, and Supermemory/Mem0 memory. Agents run as desks (spot, perps, arbitrage, research) under a deterministic risk gate with a portfolio-manager consensus. Paper/dry-run first: venues build unsigned transactions, signing is policy-gated through per-desk OWS wallets, and x402 agent budgets are enforced by ledger. Live execution only on explicit approval.",
+  "metadata": {
+    "chain": "solana",
+    "payments": "x402 on Solana (SVM) with ledger budget enforcement",
+    "reasoning": "xAI Grok",
+    "signing": "OWS policy-gated, per-desk scoped keys",
+    "tags": [
+      "solana",
+      "hedge-fund",
+      "multi-agent",
+      "perps",
+      "spot",
+      "grok",
+      "x402",
+      "paper-trading"
+    ],
+    "venues": [
+      "DFlow",
+      "Jupiter",
+      "Phoenix",
+      "Backpack (read-only)",
+      "Stonk"
+    ]
+  },
+  "mode": "paper",
+  "name": "SOL Fund — Solana AI Hedge Fund",
+  "registrations": [
+    {
+      "name": "sol_fund (Python core, MCP server, swarm, x402-on-SVM layer)",
+      "status": "paper",
+      "type": "github-source",
+      "url": "https://github.com/Solizardking/ai-hedge-fund"
+    },
+    {
+      "name": "Solana Rust hedge fund harness (swarms-rs based)",
+      "status": "paper",
+      "type": "github-source",
+      "url": "https://github.com/Solizardking/solana-hedge-fund-harness"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic"
+  ],
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1"
+}

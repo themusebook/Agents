@@ -1,0 +1,47 @@
+{
+  "active": true,
+  "description": "Solana perpetual futures agent combining xAI Grok reasoning with Phoenix DEX perps routed through Imperial. A 44-tool Web MCP server for voice and programmatic perps work: Imperial market data and portfolio reads, Jupiter/DFlow/Helius/Solana Tracker data, technical analysis and Grok trade plans, paper trading, TWAP/grid planners under guardrails, and live order placement that is fail-closed unless explicitly enabled server-side with per-order confirmation. Paper-first by design.",
+  "metadata": {
+    "chain": "solana",
+    "mode": "paper-first; live trading approval-gated",
+    "reasoning": "xAI Grok (default model grok-4.6; TA-only honest fallback when unconfigured)",
+    "tags": [
+      "solana",
+      "perps",
+      "trading",
+      "grok",
+      "mcp",
+      "phoenix",
+      "imperial",
+      "ai-agent",
+      "voice"
+    ],
+    "venue": "Imperial (Phoenix DEX perps)"
+  },
+  "name": "Clawd Grok — Imperial Perps Agent",
+  "registrations": [
+    {
+      "name": "Swarms Marketplace",
+      "status": "pending",
+      "type": "marketplace",
+      "url": "https://swarms.world/agent/5ee13558-d620-4cb8-9e0a-e5491332a753"
+    }
+  ],
+  "services": [
+    {
+      "description": "Streamable HTTP MCP server (44 tools) for Imperial perps, spot/data proxies, TA, and paper trading.",
+      "endpoint": "https://imperial-perps-mcp-production.up.railway.app/mcp",
+      "name": "MCP"
+    },
+    {
+      "description": "Imperial perps venue (Phoenix-routed).",
+      "endpoint": "https://www.imperial.space",
+      "name": "web"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic"
+  ],
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1"
+}
